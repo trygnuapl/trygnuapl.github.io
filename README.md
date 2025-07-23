@@ -1,9 +1,64 @@
-Hi, no source repo, and I did not use libapl.  But the source code can be 
-displayed with the GNU APL command:
 
-    )host 'cat' 'index.html' 'main.go'
+The trygnuapl service <https://trygnuapl.github.io> is an online, interactive
+web browser-based interface to the GNU APL interpreter, in the spirit of
+Dyalog's Try APL service <https://tryapl.com>.
 
-in the REPL of https://trygnuapl.github.io.  Basically, a 480-line back end
-Go HTTP server coupled to a 256-line HTML+javascript front end.  I'll do
-a better writeup for the curious with the next update which will address
-⎕PW and ]boxing. 
+## Release Notes for trygnuapl version 1.1 July 2025
+
+### Summary:
+
+  - New "SaveAs" button and status indicators.
+  - `⎕PW, ⎕PS, ⎕TZ, )wsid` and `]boxing` now maintain state.
+  - The key combination Shift+Enter will submit the code buffer.
+  - Updated the GNU APL interpreter to version 1.9 SVN 1879 of July 3 2025.
+
+### Details:
+
+#### New user interface features:
+
+  - New "SaveAs" buttons to save the contents of the APL session
+    or the coding buffer as a text file to the browser's local filesystem.
+
+  - New status indicator that displays the percent of the trygnuapl
+    workspace capacity that is in use.  This quota is specific to
+    trygnuapl, not GNU APL.  The trygnuapl service limits workspace
+    capacity for memory and network reasons; GNU APL has no such
+    limitation.
+
+  - New status indicator of how long it took to package, transmit,
+    evaluate, respond, and display each typed expression.  This elapsed duration
+    includes the considerable browser, network, and HTTP server overhead.
+    It is not indicative of GNU APL performance.
+
+  - Shift+Enter keystroke combination is a new shortcut to submit
+    the entire code buffer for evaluation just like the button.
+
+#### Implement features of the APL interpreter:
+
+  - `⎕PW` Printing Width and `⎕TZ` Time Zone system variables are now
+    preserved across expression evaluation (i.e state is now retained).
+
+  - `⎕PS` Print Style and `]boxing` settings are now preserved across
+    expression evaluation (i.e. state is now retained).
+
+  - `)wsid` setting is now preserved across expression evaluation
+    (i.e. state is now retained).
+
+#### Infrastructure:
+
+  - Employ the tini pseudo-init package to oversee the trygnuapl HTTP
+    web server.  This is to reap child processes GNU APL may leave behind
+    when a `)host` command runs longer than the HTTP timeout.
+
+##### Source code:
+
+To inspect the source code of trygnuapl, run the GNU APL command
+   
+  `)host 'cat' 'index.html' 'main.go'`
+
+The trygnuapl service consists of a 490-line Go HTTP server coupled to a
+318-line HTML+javascript front end.
+
+##### Previous versions:
+
+Version 1.0 June 2025 <https://webserver01-431643316.us-central1.run.app/>
