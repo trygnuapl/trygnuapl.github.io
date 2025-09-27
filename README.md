@@ -3,6 +3,27 @@ The trygnuapl service <https://trygnuapl.github.io> is an online, interactive
 web browser-based interface to the GNU APL interpreter, in the spirit of
 Dyalog's Try APL service <https://tryapl.com>.
 
+## Release Notes for trygnuapl version 1.3 Sep 2025
+
+### Summary:
+
+   - New keyboard shortcuts, including basic command history recall.
+   - New paste functionality.
+   - New cheat sheet information at the bottom of the page.
+   - Hyperlink to the GNU APL and trygnuapl project pages.
+   - Typing areas now have a light green background.
+   - UI resizing of the typing areas is remembered across web page reload.
+   - Updated the GNU APL interpreter to version 1.9 SVN 1897 of Sep 22 2025.
+
+### Details:
+
+    - Now, if pasted text ends with a newline, say from a X Window
+      selection, the text is immediately submitted to the interpreter for
+      evaluation.  The user may paste anywhere in the REPL area and the
+      pasted text and evaluation result will appear at the end of the REPL.
+      Pasted text that does not have a trailing newline is inserted at
+      the caret position.
+
 ## Release Notes for trygnuapl version 1.2 August 2025
 
 ### Summary:
@@ -74,9 +95,12 @@ To inspect the source code of trygnuapl, run the GNU APL command
   `)host cat index.html main.go`
 
 The trygnuapl service consists of a 509-line Go HTTP server coupled to a
-318-line HTML+javascript front end.
+578-line HTML+javascript front end.
 
 ##### Previous versions:
 
+Version 1.2 August 2025 <https://webserver03-670833050359.us-central1.run.app/>
+
 Version 1.1 July 2025 <https://webserver02-670833050359.us-central1.run.app/>
+
 Version 1.0 June 2025 <https://webserver01-431643316.us-central1.run.app/>
