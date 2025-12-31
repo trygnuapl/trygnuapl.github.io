@@ -1,7 +1,31 @@
 
 The trygnuapl service <https://trygnuapl.github.io> is an online, interactive
 web browser-based interface to the GNU APL interpreter, in the spirit of
-Dyalog's Try APL service <https://tryapl.com>.
+Dyalog's Try APL service <https://tryapl.com>.  Trygnuapl is free and has
+no ads, trackers, popups, registration, or analytics.
+
+## Release Notes for trygnuapl version 1.4 Dec 2025
+
+### Summary:
+
+   - The language bar at the top is now customized for GNU APL's character set.
+   - New history substitution interface specific to trygnuapl (not GNU APL).
+   - New button to edit REPL command history, which includes...
+   - Ability to edit the history size (depth) and history substitution character.
+   - New support for one-liner del editor commands in the multi-line editing buffer.
+   - New convenience alias in REPL:  `func⎕` if alone is an alias for `∇func[⎕]∇`.
+   - Far better diagnostic if `∇newfunc` is attempted in the REPL.
+   - Support for palemoon browser which does not have arrayBuffer method.
+   - Updated the GNU APL interpreter to version 1.9 SVN 1936 of Dec 21 2025.
+
+### Details:
+
+The default history substitution character is ! (exclamation point)
+because this is the same as the familiar C shell.  If this default is not
+to your liking, it can be changed at the `edit history` button.  To disable
+trygnuapl's history substitution feature, change the substitution character
+to something innocuous such as ♦ black diamond suit.  The setting will
+be remembered for that browser.
 
 ## Release Notes for trygnuapl version 1.3 Sep 2025
 
@@ -17,12 +41,11 @@ Dyalog's Try APL service <https://tryapl.com>.
 
 ### Details:
 
-    - Now, if pasted text ends with a newline, say from a X Window
-      selection, the text is immediately submitted to the interpreter for
-      evaluation.  The user may paste anywhere in the REPL area and the
-      pasted text and evaluation result will appear at the end of the REPL.
-      Pasted text that does not have a trailing newline is inserted at
-      the caret position.
+Now, if pasted text ends with a newline, say from a X Window selection
+(clipboard), the text is immediately submitted to the interpreter for
+evaluation.  The user may paste anywhere in the REPL area and the pasted
+text and evaluation result will appear at the end of the REPL.  Pasted text
+that does not have a trailing newline is inserted at the caret position.
 
 ## Release Notes for trygnuapl version 1.2 August 2025
 
@@ -88,16 +111,20 @@ Dyalog's Try APL service <https://tryapl.com>.
     web server.  This is to reap child processes GNU APL may leave behind
     when a `)host` command runs longer than the HTTP timeout.
 
-##### Source code:
+## Source code:
 
 To inspect the source code of trygnuapl, run the GNU APL command
    
   `)host cat index.html main.go`
 
-The trygnuapl service consists of a 509-line Go HTTP server coupled to a
-578-line HTML+javascript front end.
+The trygnuapl service consists of a 509-line Go HTTP server coupled to
+a 1026-line HTML+javascript front end.  Trygnuapl requires the browser
+to support javascript, the local storage interface, and the indexedDB
+interface which is where the compressed APL workspace is stored.
 
-##### Previous versions:
+### Previous versions:
+
+Version 1.3 September 2025 <https://webserver04-670833050359.us-central1.run.app/>
 
 Version 1.2 August 2025 <https://webserver03-670833050359.us-central1.run.app/>
 
