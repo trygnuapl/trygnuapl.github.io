@@ -4,6 +4,18 @@ web browser-based interface to the GNU APL interpreter, in the spirit of
 Dyalog's Try APL service <https://tryapl.com>.  Trygnuapl is free and has
 no ads, trackers, popups, registration, or analytics.
 
+## Release Notes for trygnuapl version 1.5 Jan 2026
+
+### Summary:
+
+   - Updated the GNU APL interpreter to version 1.9 SVN 1945 of Jan 22 2026.
+
+### Details:
+
+The latest version of GNU APL accompanying this release of trygnuapl has
+an important bug fix.  The log comment is "fix Complex precision on )SAVE."
+Also new in GNU APL are "add ⎕CC" and "add multiline literals."
+
 ## Release Notes for trygnuapl version 1.4 Dec 2025
 
 ### Summary:
@@ -118,11 +130,13 @@ To inspect the source code of trygnuapl, run the GNU APL command
   `)host cat index.html main.go`
 
 The trygnuapl service consists of a 509-line Go HTTP server coupled to
-a 1026-line HTML+javascript front end.  Trygnuapl requires the browser
+a 1028-line HTML+javascript front end.  Trygnuapl requires the browser
 to support javascript, the local storage interface, and the indexedDB
 interface which is where the compressed APL workspace is stored.
 
 ### Previous versions:
+
+Version 1.4 December 2025 <https://webserver05-670833050359.us-central1.run.app/>
 
 Version 1.3 September 2025 <https://webserver04-670833050359.us-central1.run.app/>
 
