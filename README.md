@@ -2,7 +2,13 @@
 The trygnuapl service <https://trygnuapl.github.io> is an online, interactive
 web browser-based interface to the GNU APL interpreter, in the spirit of
 Dyalog's Try APL service <https://tryapl.com>.  Trygnuapl is free and has
-no ads, trackers, popups, registration, or analytics.
+no ads, trackers, popups, registration, donate button, or analytics.
+
+## Release Notes for trygnuapl version 1.6 Apr 2026
+
+### Summary:
+
+    - Updated the GNU APL interpreter to version 2.0 SVN 1980 of Apr 16 2026
 
 ## Release Notes for trygnuapl version 1.5 Jan 2026
 
@@ -135,6 +141,8 @@ to support javascript, the local storage interface, and the indexedDB
 interface which is where the compressed APL workspace is stored.
 
 ### Previous versions:
+
+Version 1.5 January 2026 <https://webserver06-670833050359.us-central1.run.app/>
 
 Version 1.4 December 2025 <https://webserver05-670833050359.us-central1.run.app/>
 
