@@ -4,11 +4,28 @@ web browser-based interface to the GNU APL interpreter, in the spirit of
 Dyalog's Try APL service <https://tryapl.com>.  Trygnuapl is free and has
 no ads, trackers, popups, registration, donate button, or analytics.
 
+## Release Notes for trygnuapl version 1.7 Aug 2026
+
+### Summary:
+
+   - Updated the GNU APL interpreter to version 2.0 SVN 2098 of Aug 28 2026.
+
+   - Detect if the browser's javascript or local storage APIs are not enabled.
+
+   - Hyperlink with the new name for the document titled <ins>GNU APL Reference Manual</ins>.
+
+   - Add ability to generate a Lozenge U+25CA Unicode character via the language bar.
+
+### Details:
+
+The Lozenge character is a GNU APL alternative to the Diamond Operator character.
+It separates APL expressions.  Check portability to other APL implementations.
+
 ## Release Notes for trygnuapl version 1.6 Apr 2026
 
 ### Summary:
 
-    - Updated the GNU APL interpreter to version 2.0 SVN 1980 of Apr 16 2026
+   - Updated the GNU APL interpreter to version 2.0 SVN 1980 of Apr 16 2026
 
 ## Release Notes for trygnuapl version 1.5 Jan 2026
 
@@ -136,11 +153,13 @@ To inspect the source code of trygnuapl, run the GNU APL command
   `)host cat index.html main.go`
 
 The trygnuapl service consists of a 509-line Go HTTP server coupled to
-a 1028-line HTML+javascript front end.  Trygnuapl requires the browser
+a 1052-line HTML+javascript front end.  Trygnuapl requires the browser
 to support javascript, the local storage interface, and the indexedDB
 interface which is where the compressed APL workspace is stored.
 
 ### Previous versions:
+
+Version 1.6 April 2026 <https://webserver07-670833050359.us-central1.run.app/>
 
 Version 1.5 January 2026 <https://webserver06-670833050359.us-central1.run.app/>
 
