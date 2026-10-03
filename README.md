@@ -4,6 +4,26 @@ web browser-based interface to the GNU APL interpreter, in the spirit of
 Dyalog's Try APL service <https://tryapl.com>.  Trygnuapl is free and has
 no ads, trackers, popups, registration, donate button, or analytics.
 
+## Release Notes for trygnuapl version 1.8 Oct 2026
+
+### Summary:
+
+   - Updated the GNU APL interpreter to version 2.0 SVN 2131 of Oct 2 2026.
+
+   - Hyperlink to archive.org'd copies of the manuals, in case the main GNU site is down.
+
+   - Subtle additions regarding the ability to generate Unicode characters.
+
+### Details:
+
+A few special case Unicode characters can now be generated via keyboard sequences.
+
+   - Generate Lozenge U+25CA via \`~ or ~~`<tab>`
+
+   - Generate superscript 2 via \`R or s2`<tab>`
+
+   - Generate Greek mu via mu`<tab>` and Greek pi via pi`<tab>`
+
 ## Release Notes for trygnuapl version 1.7 Aug 2026
 
 ### Summary:
@@ -153,13 +173,17 @@ To inspect the source code of trygnuapl, run the GNU APL command
   `)host cat index.html main.go`
 
 The trygnuapl service consists of a 509-line Go HTTP server coupled to
-a 1052-line HTML+javascript front end.  Trygnuapl requires the browser
+a 1054-line HTML+javascript front end.  Trygnuapl requires the browser
 to support javascript, the local storage interface, and the indexedDB
 interface which is where the compressed APL workspace is stored.
 
 ### Previous versions:
 
-Version 1.6 April 2026 <https://webserver07-670833050359.us-central1.run.app/>
+Version 1.7 August 2026 <https://webserver09-670833050359.us-central1.run.app/>
+
+Version 1.6 April 2026 <https://webserver08-670833050359.us-central1.run.app/>
+
+Version 1.6pre April 2026 <https://webserver07-670833050359.us-central1.run.app/>
 
 Version 1.5 January 2026 <https://webserver06-670833050359.us-central1.run.app/>
 
